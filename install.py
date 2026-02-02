@@ -63,6 +63,10 @@ def main(mode):
         global backup
         backup = input('Delete existing files (no backs them up)? [y/N]: ') not in ('y', 'Y')
 
+    # Install zsh if needed
+    print("Setting up zsh...")
+    run([here('setup_zsh.sh')], check=True)
+
     # Things I install on all machines (lin/mac laptops, servers)
     here_to_home('tmux.conf')
     here_to_home('zsh_custom')
