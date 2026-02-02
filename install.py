@@ -65,9 +65,9 @@ def main(mode):
 
     # Things I install on all machines (lin/mac laptops, servers)
     here_to_home('tmux.conf')
+    here_to_home('zsh_custom')
 
     # Add more files here as you add them to your repo:
-    # here_to_home('zshrc')
     # here_to_home('vimrc')
 
 
