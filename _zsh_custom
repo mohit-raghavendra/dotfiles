@@ -27,3 +27,12 @@ bindkey '\eOB' down-line-or-history
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Git aliases
+git config --global alias.undo 'reset HEAD~1'
+git config --global alias.recent 'branch --sort=-committerdate'
+
+# GPU monitoring aliases
+alias gpu='nvidia-smi'
+alias gpuw='watch -n1 nvidia-smi'
+alias gpufree='nvidia-smi --query-gpu=index,utilization.gpu,memory.used --format=csv,noheader,nounits | awk -F, '\''{if ($2 < 10) print "GPU "$1" is free"}'\'''
